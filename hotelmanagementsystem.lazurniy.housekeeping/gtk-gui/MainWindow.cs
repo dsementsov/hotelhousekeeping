@@ -25,6 +25,8 @@ public partial class MainWindow
 
 	private global::Gtk.SpinButton spinSheets;
 
+	private global::Gtk.Button button1;
+
 	private global::Gtk.VBox vbox2;
 
 	private global::Gtk.Label label9;
@@ -83,14 +85,14 @@ public partial class MainWindow
 		w3.Expand = false;
 		w3.Fill = false;
 		// Container child vbox6.Gtk.Box+BoxChild
-		this.spinTowels = new global::Gtk.SpinButton(1, 14, 1);
+		this.spinTowels = new global::Gtk.SpinButton(1D, 14D, 1D);
 		this.spinTowels.CanDefault = true;
 		this.spinTowels.CanFocus = true;
 		this.spinTowels.Name = "spinTowels";
-		this.spinTowels.Adjustment.PageIncrement = 10;
-		this.spinTowels.ClimbRate = 1;
+		this.spinTowels.Adjustment.PageIncrement = 10D;
+		this.spinTowels.ClimbRate = 1D;
 		this.spinTowels.Numeric = true;
-		this.spinTowels.Value = 1;
+		this.spinTowels.Value = 1D;
 		this.vbox6.Add(this.spinTowels);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.spinTowels]));
 		w4.Position = 1;
@@ -126,22 +128,34 @@ public partial class MainWindow
 		w7.Expand = false;
 		w7.Fill = false;
 		// Container child vbox4.Gtk.Box+BoxChild
-		this.spinSheets = new global::Gtk.SpinButton(1, 14, 1);
+		this.spinSheets = new global::Gtk.SpinButton(1D, 14D, 1D);
 		this.spinSheets.CanDefault = true;
 		this.spinSheets.CanFocus = true;
 		this.spinSheets.Name = "spinSheets";
-		this.spinSheets.Adjustment.PageIncrement = 10;
-		this.spinSheets.ClimbRate = 1;
+		this.spinSheets.Adjustment.PageIncrement = 10D;
+		this.spinSheets.ClimbRate = 1D;
 		this.spinSheets.Numeric = true;
-		this.spinSheets.Value = 1;
+		this.spinSheets.Value = 1D;
 		this.vbox4.Add(this.spinSheets);
 		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.spinSheets]));
 		w8.Position = 1;
 		w8.Expand = false;
 		w8.Fill = false;
+		// Container child vbox4.Gtk.Box+BoxChild
+		this.button1 = new global::Gtk.Button();
+		this.button1.HeightRequest = 38;
+		this.button1.CanFocus = true;
+		this.button1.Name = "button1";
+		this.button1.UseUnderline = true;
+		this.button1.Label = global::Mono.Unix.Catalog.GetString("Загрузить настройки");
+		this.vbox4.Add(this.button1);
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.button1]));
+		w9.Position = 2;
+		w9.Expand = false;
+		w9.Fill = false;
 		this.hbox9.Add(this.vbox4);
-		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.hbox9[this.vbox4]));
-		w9.Position = 1;
+		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox9[this.vbox4]));
+		w10.Position = 1;
 		// Container child hbox9.Gtk.Box+BoxChild
 		this.vbox2 = new global::Gtk.VBox();
 		this.vbox2.WidthRequest = 150;
@@ -152,24 +166,24 @@ public partial class MainWindow
 		this.label9.Name = "label9";
 		this.label9.LabelProp = global::Mono.Unix.Catalog.GetString("Халаты");
 		this.vbox2.Add(this.label9);
-		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.label9]));
-		w10.Position = 0;
-		w10.Expand = false;
-		w10.Fill = false;
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.label9]));
+		w11.Position = 0;
+		w11.Expand = false;
+		w11.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
-		this.spinRobes = new global::Gtk.SpinButton(1, 14, 1);
+		this.spinRobes = new global::Gtk.SpinButton(1D, 14D, 1D);
 		this.spinRobes.CanDefault = true;
 		this.spinRobes.CanFocus = true;
 		this.spinRobes.Name = "spinRobes";
-		this.spinRobes.Adjustment.PageIncrement = 10;
-		this.spinRobes.ClimbRate = 1;
+		this.spinRobes.Adjustment.PageIncrement = 10D;
+		this.spinRobes.ClimbRate = 1D;
 		this.spinRobes.Numeric = true;
-		this.spinRobes.Value = 1;
+		this.spinRobes.Value = 1D;
 		this.vbox2.Add(this.spinRobes);
-		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.spinRobes]));
-		w11.Position = 1;
-		w11.Expand = false;
-		w11.Fill = false;
+		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.spinRobes]));
+		w12.Position = 1;
+		w12.Expand = false;
+		w12.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.button14 = new global::Gtk.Button();
 		this.button14.HeightRequest = 38;
@@ -178,13 +192,13 @@ public partial class MainWindow
 		this.button14.UseUnderline = true;
 		this.button14.Label = global::Mono.Unix.Catalog.GetString("Сохранить настройки");
 		this.vbox2.Add(this.button14);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.button14]));
-		w12.Position = 2;
-		w12.Expand = false;
-		w12.Fill = false;
-		this.hbox9.Add(this.vbox2);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox9[this.vbox2]));
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.button14]));
 		w13.Position = 2;
+		w13.Expand = false;
+		w13.Fill = false;
+		this.hbox9.Add(this.vbox2);
+		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox9[this.vbox2]));
+		w14.Position = 2;
 		// Container child hbox9.Gtk.Box+BoxChild
 		this.vbox8 = new global::Gtk.VBox();
 		this.vbox8.WidthRequest = 100;
@@ -198,20 +212,20 @@ public partial class MainWindow
 		this.button12.UseUnderline = true;
 		this.button12.Label = global::Mono.Unix.Catalog.GetString("Готово");
 		this.vbox8.Add(this.button12);
-		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.button12]));
-		w14.Position = 0;
-		w14.Padding = ((uint)(4));
+		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.button12]));
+		w15.Position = 0;
+		w15.Padding = ((uint)(4));
 		this.hbox9.Add(this.vbox8);
-		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox9[this.vbox8]));
-		w15.Position = 3;
-		w15.Expand = false;
-		w15.Fill = false;
-		this.vbox1.Add(this.hbox9);
-		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox9]));
-		w16.Position = 1;
+		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.hbox9[this.vbox8]));
+		w16.Position = 3;
 		w16.Expand = false;
 		w16.Fill = false;
-		w16.Padding = ((uint)(15));
+		this.vbox1.Add(this.hbox9);
+		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox9]));
+		w17.Position = 1;
+		w17.Expand = false;
+		w17.Fill = false;
+		w17.Padding = ((uint)(15));
 		this.Add(this.vbox1);
 		if ((this.Child != null))
 		{
@@ -224,9 +238,9 @@ public partial class MainWindow
 		this.spinRobes.HasDefault = true;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
-		this.DefaultActivated += new global::System.EventHandler(this.OnDefaultActivated);
 		this.pathOfASource.SelectionChanged += new global::System.EventHandler(this.OnPathChanged);
 		this.button10.Clicked += new global::System.EventHandler(this.OnExitClicked);
+		this.button1.Clicked += new global::System.EventHandler(this.OnLoadClicked);
 		this.button14.Clicked += new global::System.EventHandler(this.OnSaveClicked);
 		this.button12.Clicked += new global::System.EventHandler(this.OnDoneClicked);
 	}

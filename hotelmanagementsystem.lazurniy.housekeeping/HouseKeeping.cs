@@ -6,14 +6,10 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 {
 	public class HouseKeeping
 	{
-		public static string path;
-		public static string sourcePath;
-
-
+		
 		public HouseKeeping()
 		{
-			path = System.IO.Directory.GetCurrentDirectory();
-
+			
 		}
 
 		public void Calculate() 
@@ -21,11 +17,9 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 		
 		}
 
-		public static void Reveal()
+		public void Reveal()
 		{
-			HouseKeeping hk = new HouseKeeping();
-			hk.Calculate();
-
+			
 		}
 	
 	}

@@ -8,10 +8,14 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 		public static double sheets;
 		public static double robes;
 
+		public static string path;
+		public static string sourcePath;
+
 		private static string[] housekeepingInterval;
 
 		static HouseKeepingData()
 		{
+			path = System.IO.Directory.GetCurrentDirectory();
 			housekeepingInterval = new string[3];
 			Array.Clear(housekeepingInterval, 0, housekeepingInterval.Length);
 			LoadData();
@@ -27,25 +31,30 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 		public static void SaveData()
 		{ 
 			Convert();
-			System.IO.File.WriteAllLines(HouseKeeping.path + "\\DaysOptions.txt", housekeepingInterval);
+			System.IO.File.WriteAllLines(HouseKeepingData.path + "\\DaysOptions.txt", housekeepingInterval);
 		}
 
 		public static void LoadData()
-		{
-			var file = Directory.GetFiles(HouseKeeping.path, "DaysOptions.txt");
-			if (file == null)
+		{ //works
+			string file = HouseKeepingData.path + "\\DaysOptions.txt";
+			if (!File.Exists(file)) 
 			{
-				System.IO.File.WriteAllLines(HouseKeeping.path + "\\DaysOptions.txt", housekeepingInterval);
-				towels = 0;
-				sheets = 0;
-				robes = 0;
+				//Console.Error.Write("file is not found");
+				towels = 1;
+				sheets = 1;
+				robes = 1;
+				Convert();
+				System.IO.File.WriteAllLines(HouseKeepingData.path + "\\DaysOptions.txt", housekeepingInterval);
+
 			}
 			else
 			{
-				housekeepingInterval = File.ReadAllLines(HouseKeeping.path + "\\DaysOptions.txt");
+				//Console.Error.Write("file found");
+				housekeepingInterval = File.ReadAllLines(HouseKeepingData.path + "\\DaysOptions.txt");
 				towels = Double.Parse(housekeepingInterval[0]);
 				sheets = Double.Parse(housekeepingInterval[1]);
 				robes = Double.Parse(housekeepingInterval[2]);
+				//Console.Error.WriteLine("towels = {0}, sheets = {1}, robes = {2}, array = {3} {4} {5}", towels, sheets, robes, housekeepingInterval[0], housekeepingInterval[1], housekeepingInterval[2]);
 
 			}
 		}

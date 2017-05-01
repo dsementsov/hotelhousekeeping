@@ -5,15 +5,14 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
-    <widget-library name="../bin/Release/hotelmanagementsystem.lazurniy.housekeeping.exe" internal="true" />
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/hotelmanagementsystem.lazurniy.housekeeping.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="946 464">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
-    <signal name="DefaultActivated" handler="OnDefaultActivated" />
     <child>
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
@@ -145,7 +144,21 @@
                   </packing>
                 </child>
                 <child>
-                  <placeholder />
+                  <widget class="Gtk.Button" id="button1">
+                    <property name="MemberName" />
+                    <property name="HeightRequest">38</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Загрузить настройки</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnLoadClicked" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
                 </child>
               </widget>
               <packing>
