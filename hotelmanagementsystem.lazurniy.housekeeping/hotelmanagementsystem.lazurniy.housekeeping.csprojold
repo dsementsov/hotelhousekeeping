@@ -3,11 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{2D1A2B54-CBE1-4970-B352-315C0916BF85}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>hotelmanagementsystem.lazurniy.housekeeping</RootNamespace>
     <AssemblyName>hotelmanagementsystem.lazurniy.housekeeping</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -17,7 +16,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>anycpu</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -51,8 +50,6 @@
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="Mono.Cairo" />
-    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -67,18 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HouseKeeping.cs" />
     <Compile Include="HouseKeepingData.cs" />
-    <Compile Include="MessageDialogue.cs" />
-    <Compile Include="LoadFromCSVFile.cs" />
-    <Compile Include="PrintWindow.cs" />
-    <Compile Include="gtk-gui\hotelmanagementsystem.lazurniy.housekeeping.PrintWindow.cs" />
-    <Compile Include="SortedLaundryKeys.cs" />
-    <Compile Include="gtk-gui\hotelmanagementsystem.lazurniy.housekeeping.PrintDialog.cs" />
-    <Compile Include="PrintDoc.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="lib\libglib-2.0.dylib" />
-    <None Include="lib\libpango-1.0.0.dylib" />
-    <None Include="lib\libpango-1.0.dylib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

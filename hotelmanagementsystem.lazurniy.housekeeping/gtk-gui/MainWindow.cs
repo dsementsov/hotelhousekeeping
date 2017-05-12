@@ -85,14 +85,14 @@ public partial class MainWindow
 		w3.Expand = false;
 		w3.Fill = false;
 		// Container child vbox6.Gtk.Box+BoxChild
-		this.spinTowels = new global::Gtk.SpinButton(1D, 14D, 1D);
+		this.spinTowels = new global::Gtk.SpinButton(1, 14, 1);
 		this.spinTowels.CanDefault = true;
 		this.spinTowels.CanFocus = true;
 		this.spinTowels.Name = "spinTowels";
-		this.spinTowels.Adjustment.PageIncrement = 10D;
-		this.spinTowels.ClimbRate = 1D;
+		this.spinTowels.Adjustment.PageIncrement = 10;
+		this.spinTowels.ClimbRate = 1;
 		this.spinTowels.Numeric = true;
-		this.spinTowels.Value = 1D;
+		this.spinTowels.Value = 1;
 		this.vbox6.Add(this.spinTowels);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.spinTowels]));
 		w4.Position = 1;
@@ -128,14 +128,14 @@ public partial class MainWindow
 		w7.Expand = false;
 		w7.Fill = false;
 		// Container child vbox4.Gtk.Box+BoxChild
-		this.spinSheets = new global::Gtk.SpinButton(1D, 14D, 1D);
+		this.spinSheets = new global::Gtk.SpinButton(1, 14, 1);
 		this.spinSheets.CanDefault = true;
 		this.spinSheets.CanFocus = true;
 		this.spinSheets.Name = "spinSheets";
-		this.spinSheets.Adjustment.PageIncrement = 10D;
-		this.spinSheets.ClimbRate = 1D;
+		this.spinSheets.Adjustment.PageIncrement = 10;
+		this.spinSheets.ClimbRate = 1;
 		this.spinSheets.Numeric = true;
-		this.spinSheets.Value = 1D;
+		this.spinSheets.Value = 1;
 		this.vbox4.Add(this.spinSheets);
 		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.spinSheets]));
 		w8.Position = 1;
@@ -171,14 +171,14 @@ public partial class MainWindow
 		w11.Expand = false;
 		w11.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
-		this.spinRobes = new global::Gtk.SpinButton(1D, 14D, 1D);
+		this.spinRobes = new global::Gtk.SpinButton(1, 14, 1);
 		this.spinRobes.CanDefault = true;
 		this.spinRobes.CanFocus = true;
 		this.spinRobes.Name = "spinRobes";
-		this.spinRobes.Adjustment.PageIncrement = 10D;
-		this.spinRobes.ClimbRate = 1D;
+		this.spinRobes.Adjustment.PageIncrement = 10;
+		this.spinRobes.ClimbRate = 1;
 		this.spinRobes.Numeric = true;
-		this.spinRobes.Value = 1D;
+		this.spinRobes.Value = 1;
 		this.vbox2.Add(this.spinRobes);
 		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.spinRobes]));
 		w12.Position = 1;
@@ -239,6 +239,7 @@ public partial class MainWindow
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.pathOfASource.SelectionChanged += new global::System.EventHandler(this.OnPathChanged);
+		this.pathOfASource.FileActivated += new global::System.EventHandler(this.OnPathOfASourceFileActivated);
 		this.button10.Clicked += new global::System.EventHandler(this.OnExitClicked);
 		this.button1.Clicked += new global::System.EventHandler(this.OnLoadClicked);
 		this.button14.Clicked += new global::System.EventHandler(this.OnSaveClicked);

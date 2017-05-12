@@ -4,6 +4,8 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 {
 	public static class HouseKeepingData
 	{
+		public static DateTime dateNow;
+
 		public static double towels;
 		public static double sheets;
 		public static double robes;
@@ -15,6 +17,7 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 
 		static HouseKeepingData()
 		{
+			dateNow = DateTime.Now.Date;
 			path = System.IO.Directory.GetCurrentDirectory();
 			housekeepingInterval = new string[3];
 			Array.Clear(housekeepingInterval, 0, housekeepingInterval.Length);
