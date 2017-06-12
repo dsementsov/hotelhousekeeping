@@ -25,8 +25,8 @@
             <child>
               <widget class="Gtk.FileChooserWidget" id="pathOfASource">
                 <property name="MemberName" />
-                <signal name="SelectionChanged" handler="OnPathChanged" />
-                <signal name="FileActivated" handler="OnPathOfASourceFileActivated" after="yes" />
+                <signal name="CurrentFolderChanged" handler="OnPathChanged" />
+                <signal name="SelectionChanged" handler="OnPathOfASourceFileActivated" />
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -150,9 +150,9 @@
                     <property name="HeightRequest">38</property>
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
-                    <property name="Label" translatable="yes">Загрузить настройки</property>
+                    <property name="Label" translatable="yes">Сохранить настройки</property>
                     <property name="UseUnderline">True</property>
-                    <signal name="Clicked" handler="OnLoadClicked" />
+                    <signal name="Clicked" handler="OnSaveClicked" />
                   </widget>
                   <packing>
                     <property name="Position">2</property>
@@ -211,9 +211,9 @@
                     <property name="HeightRequest">38</property>
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
-                    <property name="Label" translatable="yes">Сохранить настройки</property>
+                    <property name="Label" translatable="yes">Конвертировать файл</property>
                     <property name="UseUnderline">True</property>
-                    <signal name="Clicked" handler="OnSaveClicked" />
+                    <signal name="Clicked" handler="OnConvertClicked" />
                   </widget>
                   <packing>
                     <property name="Position">2</property>
@@ -235,7 +235,7 @@
                 <property name="HeightRequest">100</property>
                 <property name="Spacing">6</property>
                 <child>
-                  <widget class="Gtk.Button" id="button12">
+                  <widget class="Gtk.Button" id="button2">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>

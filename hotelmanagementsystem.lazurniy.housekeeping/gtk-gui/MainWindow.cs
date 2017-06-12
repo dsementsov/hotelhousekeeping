@@ -37,7 +37,7 @@ public partial class MainWindow
 
 	private global::Gtk.VBox vbox8;
 
-	private global::Gtk.Button button12;
+	private global::Gtk.Button button2;
 
 	protected virtual void Build()
 	{
@@ -147,7 +147,7 @@ public partial class MainWindow
 		this.button1.CanFocus = true;
 		this.button1.Name = "button1";
 		this.button1.UseUnderline = true;
-		this.button1.Label = global::Mono.Unix.Catalog.GetString("Загрузить настройки");
+		this.button1.Label = global::Mono.Unix.Catalog.GetString("Сохранить настройки");
 		this.vbox4.Add(this.button1);
 		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.button1]));
 		w9.Position = 2;
@@ -190,7 +190,7 @@ public partial class MainWindow
 		this.button14.CanFocus = true;
 		this.button14.Name = "button14";
 		this.button14.UseUnderline = true;
-		this.button14.Label = global::Mono.Unix.Catalog.GetString("Сохранить настройки");
+		this.button14.Label = global::Mono.Unix.Catalog.GetString("Конвертировать файл");
 		this.vbox2.Add(this.button14);
 		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.button14]));
 		w13.Position = 2;
@@ -206,13 +206,13 @@ public partial class MainWindow
 		this.vbox8.Name = "vbox8";
 		this.vbox8.Spacing = 6;
 		// Container child vbox8.Gtk.Box+BoxChild
-		this.button12 = new global::Gtk.Button();
-		this.button12.CanFocus = true;
-		this.button12.Name = "button12";
-		this.button12.UseUnderline = true;
-		this.button12.Label = global::Mono.Unix.Catalog.GetString("Готово");
-		this.vbox8.Add(this.button12);
-		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.button12]));
+		this.button2 = new global::Gtk.Button();
+		this.button2.CanFocus = true;
+		this.button2.Name = "button2";
+		this.button2.UseUnderline = true;
+		this.button2.Label = global::Mono.Unix.Catalog.GetString("Готово");
+		this.vbox8.Add(this.button2);
+		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.button2]));
 		w15.Position = 0;
 		w15.Padding = ((uint)(4));
 		this.hbox9.Add(this.vbox8);
@@ -238,11 +238,11 @@ public partial class MainWindow
 		this.spinRobes.HasDefault = true;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
-		this.pathOfASource.SelectionChanged += new global::System.EventHandler(this.OnPathChanged);
-		this.pathOfASource.FileActivated += new global::System.EventHandler(this.OnPathOfASourceFileActivated);
+		this.pathOfASource.CurrentFolderChanged += new global::System.EventHandler(this.OnPathChanged);
+		this.pathOfASource.SelectionChanged += new global::System.EventHandler(this.OnPathOfASourceFileActivated);
 		this.button10.Clicked += new global::System.EventHandler(this.OnExitClicked);
-		this.button1.Clicked += new global::System.EventHandler(this.OnLoadClicked);
-		this.button14.Clicked += new global::System.EventHandler(this.OnSaveClicked);
-		this.button12.Clicked += new global::System.EventHandler(this.OnDoneClicked);
+		this.button1.Clicked += new global::System.EventHandler(this.OnSaveClicked);
+		this.button14.Clicked += new global::System.EventHandler(this.OnConvertClicked);
+		this.button2.Clicked += new global::System.EventHandler(this.OnDoneClicked);
 	}
 }

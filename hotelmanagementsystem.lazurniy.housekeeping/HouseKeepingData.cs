@@ -12,12 +12,17 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 
 		public static string path;
 		public static string sourcePath;
+        public static string csvSourcePath;
+        public static string convertingScriptPath;
 
 		private static string[] housekeepingInterval;
 
 		static HouseKeepingData()
 		{
-			dateNow = DateTime.Now.Date;
+            sourcePath = System.IO.Directory.GetCurrentDirectory();
+            convertingScriptPath = System.IO.Directory.GetCurrentDirectory() + "/XLTOCSV.vbs";
+            dateNow = DateTime.Now.Date.AddHours(15.0);
+            csvSourcePath = System.IO.Directory.GetCurrentDirectory() + "/residents.csv";
 			path = System.IO.Directory.GetCurrentDirectory();
 			housekeepingInterval = new string[3];
 			Array.Clear(housekeepingInterval, 0, housekeepingInterval.Length);
@@ -34,7 +39,8 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 		public static void SaveData()
 		{ 
 			Convert();
-			System.IO.File.WriteAllLines(HouseKeepingData.path + "\\DaysOptions.txt", housekeepingInterval);
+			File.WriteAllLines(HouseKeepingData.path + "\\DaysOptions.txt", housekeepingInterval);
+
 		}
 
 		public static void LoadData()
@@ -52,12 +58,10 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 			}
 			else
 			{
-				//Console.Error.Write("file found");
 				housekeepingInterval = File.ReadAllLines(HouseKeepingData.path + "\\DaysOptions.txt");
 				towels = Double.Parse(housekeepingInterval[0]);
 				sheets = Double.Parse(housekeepingInterval[1]);
 				robes = Double.Parse(housekeepingInterval[2]);
-				//Console.Error.WriteLine("towels = {0}, sheets = {1}, robes = {2}, array = {3} {4} {5}", towels, sheets, robes, housekeepingInterval[0], housekeepingInterval[1], housekeepingInterval[2]);
 
 			}
 		}

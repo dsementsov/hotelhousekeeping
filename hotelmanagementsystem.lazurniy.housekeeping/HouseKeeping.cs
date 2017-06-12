@@ -16,23 +16,28 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 
 		public Dictionary<string, string> sortedLaundry = new Dictionary<string, string>();
 
-		public HouseKeeping()
-		{
-			Calculate();
-			Sort();
-		}
+
+        public void ClearData()
+        {
+            generalNeded.Clear();
+            robesNeeded.Clear();
+            sheetsNeeded.Clear();
+            towelsNeeded.Clear();
+            sortedLaundry.Clear();
+        }
 
 		public void Calculate() 
 		{
 			foreach (KeyValuePair<int, roomData> entry in ImportedData.rooms)
 			{
-				//TimeSpan daysPassed = CalculateElapsedDays(entry.Value.checkInDate, HouseKeepingData.dateNow);
-				int totalDaysPassed = (HouseKeepingData.dateNow - entry.Value.checkInDate).Days;
+                var totalDaysPassed = (HouseKeepingData.dateNow.Subtract(entry.Value.checkInDate)).Days;
 				if (HouseKeepingData.dateNow.Date == entry.Value.checkOutDate.Date)
 				{ 
 					generalNeded.Add(entry.Value.roomNo);
 					continue;
 				}
+                if (totalDaysPassed == 0)
+                    continue;
 				if ((totalDaysPassed % (int)HouseKeepingData.robes) == 0)
 				{ 
 					robesNeeded.Add(entry.Value.roomNo);
@@ -79,7 +84,8 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 			sortedLaundry.Add(SortedLaundryKeys.towelsAmount, (towelsNeeded.Count + generalNeded.Count).ToString());
 			sortedLaundry.Add(SortedLaundryKeys.robesAmount, (robesNeeded.Count + generalNeded.Count).ToString());
 			sortedLaundry.Add(SortedLaundryKeys.sheetsAmount, (sheetsNeeded.Count + generalNeded.Count).ToString());
-		}
+        }
+
 	}
 
 }

@@ -5,20 +5,17 @@ using System.IO;
 using System.Globalization;
 using System.Diagnostics.CodeAnalysis;
 
+
 namespace hotelmanagementsystem.lazurniy.housekeeping
 {
 	public class LoadFromCSVFile
 	{
-		public string pathToCSV = System.IO.Directory.GetCurrentDirectory() + "/residents.csv";
+        public string pathToCSV = HouseKeepingData.csvSourcePath;
 
-		public LoadFromCSVFile()
-		{
-            LoadGUestData();
-			//FilterGuestDate();
-		}
 
 		public void LoadGUestData()
 		{
+            ImportedData.rooms.Clear();
 			var lineCounter = 0;
 			var roomNo = 0;
 			string[] s;
@@ -32,13 +29,26 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 				{
 					try
 					{
-						s = new string[8];
-						s = importFile.ReadLine().Split(';');
-						if (Int32.TryParse(s[3], out roomNo))
+						s = new string[10];
+                        int roomIndex, inIndex, outIndex;
+                        roomIndex = 6;
+                        inIndex = 2;
+                        outIndex = 3;
+                        s = importFile.ReadLine().Split(new Char[] { ';', ','} );
+                        var validLineStartCheck = s[0];
+                        if (!Int32.TryParse(validLineStartCheck.Substring(0,1), out int b))
+                        {
+                            roomIndex = 5;
+                            inIndex = 1;
+                            outIndex = 2;
+                        }
+                        if (s.Length <= roomIndex)
+                            continue;
+                        if (Int32.TryParse(s[roomIndex], out roomNo))
 						{
 							ImportedData.rooms.Add(lineCounter, new roomData(roomNo,
-																				   DateTime.ParseExact(s[1], dateFormat, null),
-																				   DateTime.ParseExact(s[2], dateFormat, null)));
+                                                                             DateTime.ParseExact(s[inIndex], dateFormat, null),
+                                                                             DateTime.ParseExact(s[outIndex], dateFormat, null)));
 
 						}
 					}
@@ -46,6 +56,10 @@ namespace hotelmanagementsystem.lazurniy.housekeeping
 					{
 						MessageDialogue md = new MessageDialogue("Указан файл неправильного формата!" + e.ToString(), MessageType.Error);
 					}
+                    catch (IndexOutOfRangeException e)
+                    {
+                        MessageDialogue md = new MessageDialogue("oops" + e.ToString(), MessageType.Error);
+                    }
 					lineCounter++;
 				}
 				importFile.Close();
